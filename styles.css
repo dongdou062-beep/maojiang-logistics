@@ -43,9 +43,15 @@ button { cursor: pointer; }
 
 .hero { min-height: 740px; position: relative; overflow: hidden; background: var(--navy-deep); color: var(--white); display: flex; flex-direction: column; align-items: stretch; padding-top: 82px; }
 .hero-media, .hero-shade { position: absolute; inset: 0; }
-.hero-media { background: url('assets/tanker-sunset.jpg') center 51% / cover no-repeat; transform: scale(1.02); }
-.hero-shade { background: linear-gradient(90deg, rgba(7,16,21,.9) 0%, rgba(7,16,21,.68) 37%, rgba(7,16,21,.22) 72%, rgba(7,16,21,.52) 100%), linear-gradient(0deg, rgba(7,16,21,.55), transparent 45%); }
-.hero-grid { position: relative; z-index: 1; flex: 1; display: grid; grid-template-columns: minmax(0, 1fr) 300px; align-items: center; gap: 60px; padding-top: 70px; }
+.hero-media { overflow: hidden; background: url('assets/hero-pingwei-power-plant.jpg') center 43% / cover no-repeat; transform: scale(1.02); }
+.hero-media::after { content: ''; position: absolute; inset: auto 0 0; height: 37%; background: linear-gradient(0deg, rgba(13,20,23,.82), rgba(13,20,23,.12)); }
+.hero-fleet { position: absolute; z-index: 1; inset: 0; overflow: hidden; pointer-events: none; }
+.hero-truck { position: absolute; bottom: -6%; width: min(39vw, 560px); height: auto; object-fit: contain; filter: drop-shadow(0 22px 24px rgba(0,0,0,.46)) saturate(.82) brightness(.78); }
+.hero-truck-left { left: 38%; transform: scale(.79); transform-origin: bottom center; }
+.hero-truck-center { z-index: 1; left: 55%; transform: translateX(-18%) scale(1.02); transform-origin: bottom center; }
+.hero-truck-right { right: -4%; transform: scale(.78); transform-origin: bottom center; }
+.hero-shade { background: linear-gradient(90deg, rgba(7,16,21,.94) 0%, rgba(7,16,21,.76) 36%, rgba(7,16,21,.3) 70%, rgba(7,16,21,.47) 100%), linear-gradient(0deg, rgba(7,16,21,.58), transparent 48%); }
+.hero-grid { position: relative; z-index: 2; flex: 1; display: grid; grid-template-columns: minmax(0, 1fr) 300px; align-items: center; gap: 60px; padding-top: 70px; }
 .hero-content { max-width: 720px; }
 .eyebrow, .kicker, .visual-label, .local-meta, .footer-bottom, .step-no, .service-index { font: 500 11px/1.2 var(--mono); letter-spacing: .14em; text-transform: uppercase; }
 .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--lime); margin: 0 0 24px; }
@@ -66,7 +72,7 @@ h1 em { color: var(--lime); font-style: normal; }
 .aside-line { width: 100%; height: 1px; margin-bottom: 16px; background: rgba(255,255,255,.48); }
 .hero-aside p { margin-bottom: 14px; font-size: 14px; line-height: 1.65; }
 .hero-aside span { color: var(--lime); font: 10px/1.3 var(--mono); letter-spacing: .08em; }
-.hero-metrics { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, 1fr) 1.2fr; gap: 0; margin-top: auto; padding-top: 18px; padding-bottom: 30px; border-top: 1px solid rgba(255,255,255,.35); }
+.hero-metrics { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(3, 1fr) 1.2fr; gap: 0; margin-top: auto; padding-top: 18px; padding-bottom: 30px; border-top: 1px solid rgba(255,255,255,.35); }
 .hero-metrics > div:not(.metrics-note) { display: flex; align-items: baseline; gap: 12px; border-right: 1px solid rgba(255,255,255,.24); padding-left: 18px; }
 .hero-metrics > div:first-child { padding-left: 0; }
 .hero-metrics strong { font-size: 30px; line-height: 1; font-weight: 500; color: var(--lime); }
@@ -231,7 +237,12 @@ body.js-ready .reveal.is-visible { opacity: 1; transform: translateY(0); }
   .brand-copy small { display: none; }
   .brand-copy strong { font-size: 14px; }
   .hero { min-height: 690px; padding-top: 70px; }
-  .hero-shade { background: linear-gradient(90deg, rgba(7,16,21,.9), rgba(7,16,21,.36)), linear-gradient(0deg, rgba(7,16,21,.7), transparent 60%); }
+  .hero-media { background-position: 56% center; }
+  .hero-truck { bottom: 1%; width: 74vw; filter: drop-shadow(0 15px 18px rgba(0,0,0,.48)) saturate(.8) brightness(.96); }
+  .hero-truck-left { left: -26%; transform: scale(.62); }
+  .hero-truck-center { left: 43%; transform: translateX(-50%) scale(.78); }
+  .hero-truck-right { right: -29%; transform: scale(.6); }
+  .hero-shade { background: linear-gradient(90deg, rgba(7,16,21,.93), rgba(7,16,21,.55)), linear-gradient(0deg, rgba(7,16,21,.76), transparent 62%); }
   .hero-grid { padding-top: 30px; }
   h1 { font-size: 44px; line-height: 1.12; }
   .hero-lede { font-size: 14px; }
